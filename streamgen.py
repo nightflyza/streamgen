@@ -26,11 +26,11 @@ def launchRtspStreams(numStreams, startPort=8554, videoDir="vids", streamUrl="h2
             ":network-caching=1500", ":sout-all", ":sout-keep"
         ]
 
-        print(f"Starting RTSP stream {i + 1}: file {videoFile} at {authLogin}:{authPassword}@{streamHost}:{port}/{streamUrl}")
+        print(f"Starting RTSP stream {i + 1}: source file {videoFile} at {authLogin}:{authPassword}@{streamHost}:{port}/{streamUrl}")
         process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         processes.append(process)
 
-    print("=====\nPress ^C to shutdown streams")
+    print("=====\nPress ^C to shutdown all streams")
     return processes
 
 def renderHelp():
